@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="portalLic">
+	<head>
+		<title></title>			<!-- ADD TITLE -->
+		<meta  charset="utf-8"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">			<!-- adds bootstrap-->
+		<link rel="stylesheet" type="text/css" href="main.css">			<!-- adds css -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>			<!-- adds angular.js -->
+		<script src="portal.js"></script>			<!-- adds angular.js -->
+	</head>
+	<body>
+		<div class="container-fluid">
+			<header class="navbar navbar-default navbar-fixed-top">			<!-- adds top-fixed header -->
+				<div>			<!-- adds top sign -->
+					<h1>Portal Licitações<h1>
+				</div>
+				<div>			<!-- adds menu -->
+					<button type="button" class="btn btn-default navbar-btn">Minha Área</button>
+					<button type="button" class="btn btn-default navbar-btn">Pesquisar</button>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Licitações <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Novas Licitações</a></li>
+							<li><a href="#">Histórico</a></li>
+							<li><a href="#">Ver Painel</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Sobre <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Objetivo</a></li>
+							<li><a href="#">Quem Somos</a></li>
+							<li><a href="#">Contatos</a></li>
+							<li><a href="#">Mapa do Site</a></li>
+						</ul>
+					</div>
+					<button type="button" class="btn btn-default navbar-btn">Entrar</button>
+				</div>
+			<header>
+			<section class=container ng-controller="PortalController as portCont">			<!-- adds content -->
+				
+			</section>
+		</div>
+	</body>
+</html>
