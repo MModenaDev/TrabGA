@@ -58,7 +58,7 @@ portalLic.config(function ($routeProvider) {			// configs a router to change pag
 
 portalLic.controller('mainController', ['$scope', function($scope) {
     
-    $scope.name = 'Main';
+	
     
 }]);
 
