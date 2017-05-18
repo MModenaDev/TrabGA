@@ -13,13 +13,13 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<header class="navbar navbar-default navbar-fixed-top">			<!-- adds top-fixed header -->
+			<header class="navbar navbar-default">			<!-- adds top-fixed header -->
 				<div>			<!-- adds top sign -->
 					<h1>Portal Licitações<h1>
 				</div>
 				<div>			<!-- adds menu -->
-					<button type="button" class="btn btn-default navbar-btn"><a href="#">Minha Área</a></button>
-					<button type="button" class="btn btn-default navbar-btn"><a href="#/pesquisar">Pesquisar</a></button>
+					<a href="#"><button type="button" class="btn btn-default navbar-btn">Minha Área</button></a>
+					<a href="#/pesquisar"><button type="button" class="btn btn-default navbar-btn">Pesquisar</button></a>
 					<div class="btn-group">
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Licitações <span class="caret"></span>
@@ -41,10 +41,10 @@
 							<li><a href="#/mapaDoSite">Mapa do Site</a></li>
 						</ul>
 					</div>
-					<button type="button" class="btn btn-default navbar-btn"><a href="#/entrar">Entrar</a></button>
+					<a href="#/entrar"><button type="button" class="btn btn-default navbar-btn">Entrar</button></a>
 				</div>
-			<header>
-			<section class=container>			<!-- adds content -->
+			</header>
+			<section>			<!-- adds content -->
 				<div ng-view></div>
 			</section>
 		</div>

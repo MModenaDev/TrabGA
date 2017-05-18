@@ -51,7 +51,7 @@ portalLic.config(function ($routeProvider) {			// configs a router to change pag
 	
 	.when('/entrar', {			// sends Entrar to panel
         templateUrl: 'Panel/entrar.html',
-        controller: 'mainController'
+        controller: 'entrarController'
     })
     
 });
@@ -62,3 +62,8 @@ portalLic.controller('mainController', ['$scope', function($scope) {
     
 }]);
 
+portalLic.controller('entrarController', ['$scope', function($scope) {
+    
+	
+    
+}]);
