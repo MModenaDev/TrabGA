@@ -1,5 +1,16 @@
 <style>
-	
-	
+
+.container-fluid {
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.navbar-align {
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+	text-align: center;
+}
 	
 </style>
