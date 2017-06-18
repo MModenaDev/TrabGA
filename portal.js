@@ -1,69 +1,98 @@
-var portalLic = angular.module('portalLic', ['ngRoute']);
+var app = angular.module("myapp",["ngRoute"]);
+app.config(function($routeProvider){
 
-portalLic.config(function ($routeProvider) {			// configs a router to change pages
-    
-    $routeProvider
-    
-    .when('/', {			// sends home to panel
-        templateUrl: 'Panel/minhaArea.html',
-        controller: 'mainController'
-    })
-	
-	.when('/pesquisar', {			// sends Pesquisar to panel
-        templateUrl: 'Panel/pesquisar.html',
-        controller: 'mainController'
-    })
-	
-	.when('/novasLicit', {			// sends Novas Licitacoes to panel
-        templateUrl: 'Panel/novasLicit.html',
-        controller: 'mainController'
-    })
-	
-	.when('/historico', {			// sends Historico to panel
-        templateUrl: 'Panel/historico.html',
-        controller: 'mainController'
-    })
-	
-	.when('/painel', {			// sends Painel to panel
-        templateUrl: 'Panel/verPainel.html',
-        controller: 'mainController'
-    })
-	
-	.when('/objetivos', {			// sends Objetivos to panel
-        templateUrl: 'Panel/objetivos.html',
-        controller: 'mainController'
-    })
-	
-	.when('/quemSomos', {			// sends Quem Somos to panel
-        templateUrl: 'Panel/quemSomos.html',
-        controller: 'mainController'
-    })
-	
-	.when('/contatos', {			// sends Contatos to panel
-        templateUrl: 'Panel/contatos.html',
-        controller: 'mainController'
-    })
-	
-	.when('/mapa', {			// sends Mapa do Site to panel
-        templateUrl: 'Panel/mapaDoSite.html',
-        controller: 'mainController'
-    })
-	
-	.when('/entrar', {			// sends Entrar to panel
-        templateUrl: 'Panel/entrar.html',
-        controller: 'entrarController'
-    })
-    
+    $routeProvider.when('/',{
+        templateUrl: "Panel/minhaArea.html",
+        controller :'minhaAreaControl'
+    });
+         
+     $routeProvider.when('/pesquisa',{
+        templateUrl: "Panel/pesquisar.html",
+        controller :'pesquisarControl'
+    });
+
+    $routeProvider.when('/novasLicit',{
+        templateUrl: "Panel/novasLicit.html",
+        controller :'novasLicitControl'
+    });
+
+    $routeProvider.when('/historico',{
+        templateUrl: "Panel/historico.html",
+        controller :'historicoControl'
+    });
+
+    $routeProvider.when('/verPainel',{
+        templateUrl: "Panel/verPainel.html",
+        controller :'verPainelControl'
+    });
+
+    $routeProvider.when('/objetivos',{
+        templateUrl: "Panel/objetivos.html",
+        controller :'objetivosControl'
+    });
+
+    $routeProvider.when('/quemSomos',{
+        templateUrl: "Panel/quemSomos.html",
+        controller :'quemSomosControl'
+    });
+     
+    $routeProvider.when('/contatos',{
+        templateUrl: "Panel/contatos.html",
+        controller :'contatosControl'
+    });
+
+     $routeProvider.when('/mapaDoSite',{
+        templateUrl: "Panel/mapaDoSite.html",
+        controller :'mapaDoSiteControl'
+    });
+
+      $routeProvider.when('/entrar',{
+        templateUrl: "Panel/entrar.html",
+        controller :'entrarControl'
+    });
+
+     $routeProvider.otherwise({redirectTo : "/index"});
 });
 
-portalLic.controller('mainController', ['$scope', function($scope) {
-    
-	
-    
-}]);
 
-portalLic.controller('entrarController', ['$scope', function($scope) {
-    
-	
-    
-}]);
+app.controller("minhaAreaControl",function($scope){
+    $scope.message= "Minha Área"
+});
+
+app.controller("pesquisarControl",function($scope){
+    $scope.message= "Pesquisar"
+});
+
+app.controller("novasLicitControl",function($scope){
+    $scope.message= "Novas Licitações"
+});
+
+app.controller("historicoControl",function($scope){
+    $scope.message= "Histórico"
+});
+
+app.controller("verPainelControl",function($scope){
+    $scope.message= "Ver Painel"
+});
+
+app.controller("objetivosControl",function($scope){
+    $scope.message= "Objetivos"
+});
+
+app.controller("quemSomosControl",function($scope){
+    $scope.message= "Quem somos"
+});
+
+app.controller("contatosControl",function($scope){
+    $scope.message= "Contatos"
+});
+
+app.controller("mapaDoSiteControl",function($scope){
+    $scope.message= "Mapa do Site"
+});
+
+app.controller("entrarControl",function($scope){
+    $scope.message= "Entrar"
+});
+
+
