@@ -19,7 +19,8 @@
     max-width: 950px;
 }
 
-.titulo-azul{
+.subtitulo-azul{
+	font-size: 1.7em;
 	font-weight: bold;
 	color: #235594;	
 }
@@ -159,6 +160,30 @@
 #botaoPesquisaSolicitacao{
    width: 150px;
    margin-left: 84%;   
+}
+
+.tabgroup{
+  background-color: #fff;
+}
+.tab{
+	font-weight: bold;
+	border: 0px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0,0,0,0.1); 
+	background-color: #235594;
+	padding: 2px 2px;
+	font-size: 14px;
+	display:inline-block;
+	padding: 5px;
+}
+
+.tab:hover{
+	color: #000;
+}
+
+.tabcontents{
+border: 2px solid #e1e1e1;    
+padding: 5px 20px 5px 20px;
 }
 
 </style>

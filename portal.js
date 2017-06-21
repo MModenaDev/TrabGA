@@ -61,6 +61,11 @@ app.config(function($routeProvider){
         controller :'trocarSenhaControl'
     });
 
+	$routeProvider.when('/esqueciSenha',{
+        templateUrl: "Panel/esqueciSenha.html",
+        controller :'esqueciSenhaControl'
+    });
+
      $routeProvider.otherwise({redirectTo : "/index"});
 });
 
@@ -182,6 +187,15 @@ app.controller("trocarSenhaControl",function($scope){
     $scope.message= "Trocar Senha"
 });
 
-var modalLogin = true;
-var modalRegistrar = false;
-var modalEsqueciSenha = false;
+app.controller("esqueciSenhaControl",function($scope){
+    $scope.message= "Esqueci a Senha"
+});
+// <<<<<<< HEAD
+// var modalLogin = true;
+// var modalRegistrar = false;
+// var modalEsqueciSenha = false;
+// =======
+// app.controller("esqueciSenhaControl",function($scope){
+//     $scope.message= "Esqueci a Senha"
+// });
+// >>>>>>> c09fd9d055ba99b84e3da771d8929443c75e4c52
