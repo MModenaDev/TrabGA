@@ -1,3 +1,4 @@
+
 <style>
 
 .container-fluid {
@@ -142,4 +143,27 @@
    margin-left: 84%;   
 }
 
+<<<<<<< HEAD
+=======
+#selectBusca{
+  
+   float:left;
+	 width: 190px; 
+}
+
+#campoBusca{
+   margin-left: 37%;   
+   width: 600px;
+}
+
+.jumbotron{
+  	margin-top: 20px;    
+}
+
+#botaoPesquisaSolicitacao{
+   width: 150px;
+   margin-left: 84%;   
+}
+
+>>>>>>> origin/master
 </style>

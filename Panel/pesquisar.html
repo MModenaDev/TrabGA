@@ -1,3 +1,29 @@
-<p>
-	{{message}}
-</p>
+
+<div>
+	<select id = "selectBusca" class="form-control" ng-model="busca.tipoBusca" ng-options = "opcao.op for opcao in listOpcoes">
+			<option value = ""> Filtro</option>
+	</select>	
+
+	<input id = "campoBusca" class="form-control" type="text" ng-model="palavraBusca" placeholder="Digite aqui o que está procurando" />
+	<button id = "botaoPesquisaSolicitacao" style = "margin-top: 20px; al " class = "btn btn-primary btn-block"   ng-click = "             pesquisarLicitacao(palavraBusca,busca.tipoBusca.op2)">Pesquisar</button>
+	
+
+	<div class = "jumbotron">	
+		<table id= "tabelaLicitacao" class="table table-striped">
+			<tr>
+				<th><a href="" ng-click = OrdenarPor('Id')> Id</a></th>
+				<th >Titulo</th>
+				<th style="text-align: center "> Descrição</th>
+				<th><a href="" ng-click = OrdenarPor('Data')> Data de Entrega</a></th>
+				<th>Tags</th>
+			</tr>
+			<tr ng-repeat="licitacao in listaLicitacao | orderBy:criterioDeOrdenacao:direcaoOrdenacao">
+				<td>{{licitacao.Id}}</td>
+				<td>{{licitacao.Titulo}}</td>
+				<td>{{licitacao.Descricao}}</td>
+				<td>{{licitacao.Data | date:'dd/MM/yyyy'}}</td>
+				<td>{{licitacao.Tags}}</td>
+			</tr>
+		</table>
+
+</div>
