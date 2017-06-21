@@ -56,6 +56,11 @@ app.config(function($routeProvider){
         controller :'registrarControl'
     });
 
+	$routeProvider.when('/trocarSenha',{
+        templateUrl: "Panel/trocarSenha.html",
+        controller :'trocarSenhaControl'
+    });
+
      $routeProvider.otherwise({redirectTo : "/index"});
 });
 
@@ -114,6 +119,7 @@ $scope.OrdenarPor = function(campo){
 
 });
 
+//<<<<<<< HEAD
 app.controller("minhaAreaControl",function($scope, Licitation)
 {
   Licitation.findUser($scope);
@@ -126,6 +132,27 @@ app.controller("minhaAreaControl",function($scope, Licitation)
 
 
   //$scope.message= "Minha Área"
+// =======
+// app.controller("minhaAreaControl",function($scope){
+//     $scope.message= "Minha Área"
+//
+// 	$scope.listaTags = [
+// 		{name:"TAG1"},
+// 		{name:"TAG2"},
+// 		{name:"TAG3"}
+// 	];
+//
+// 	$scope.addTag = function(){
+// 		$scope.listaTags.push({name:$scope.adicTag});
+// 		$scope.adicTag = '';
+// 	}
+//
+// 	$scope.removeTag = function(){
+// 		$scope.remTag = '';
+// 		var index = $scope.listaTags.indexOf($scope.remTag.name);
+// 		$scope.listaTags.splice(index, 1);
+// 	}
+// >>>>>>> 4a82e16f5abfd4f334881540d656b0ce2f7129e5
 });
 
 app.controller("novasLicitControl",function($scope){
@@ -145,7 +172,7 @@ app.controller("objetivosControl",function($scope){
 });
 
 app.controller("quemSomosControl",function($scope){
-    $scope.message= "Quem somos"
+    $scope.message= "Quem Somos"
 });
 
 app.controller("contatosControl",function($scope){
@@ -172,6 +199,10 @@ app.controller("registrarControl",function($scope, Licitation)
     Licitation.register($scope.user);
   }
   //$scope.message= "Registrar"
+});
+
+app.controller("trocarSenhaControl",function($scope){
+    $scope.message= "Trocar Senha"
 });
 
 var modalLogin = true;
