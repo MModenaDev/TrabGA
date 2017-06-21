@@ -1,13 +1,13 @@
-var app = angular.module("myapp",["ngRoute"]);
+var app = angular.module('myapp',['ngRoute', 'ngResource', 'LicitationService']);
 app.config(function($routeProvider){
 
     $routeProvider.when('/',{
         templateUrl: "Panel/minhaArea.html",
         controller :'minhaAreaControl'
     });
-         
+
      $routeProvider.when('/pesquisa',{
-        templateUrl: "Panel/pesquisar.html",      
+        templateUrl: "Panel/pesquisar.html",
         controller :'pesquisarControl'
     });
 
@@ -35,7 +35,7 @@ app.config(function($routeProvider){
         templateUrl: "Panel/quemSomos.html",
         controller :'quemSomosControl'
     });
-     
+
     $routeProvider.when('/contatos',{
         templateUrl: "Panel/contatos.html",
         controller :'contatosControl'
@@ -50,7 +50,7 @@ app.config(function($routeProvider){
         templateUrl: "Panel/entrar.html",
         controller :'entrarControl'
     });
-	
+
 	$routeProvider.when('/registrar',{
         templateUrl: "Panel/registrar.html",
         controller :'registrarControl'
@@ -100,22 +100,32 @@ $scope.pesquisarLicitacao = function(campoBusca,tipoBusca){
             break;
         case "Tags":
              $scope.listaLicitacao = listaLicitacaoTemp.filter(function(obj) { return obj.Tags == campoBusca; });
-            break;   
+            break;
 
         default:
            $scope.listaLicitacao = listaLicitacaoTemp;
-        }		   
+        }
 	}
 
 $scope.OrdenarPor = function(campo){
     $scope.criterioDeOrdenacao = campo;
     $scope.direcaoOrdenacao =! $scope.direcaoOrdenacao;
 }
-        
+
 });
 
-app.controller("minhaAreaControl",function($scope){
-    $scope.message= "Minha Área"
+app.controller("minhaAreaControl",function($scope, Licitation)
+{
+  Licitation.findUser($scope);
+  // {
+  //   $scope.documentNumber = user.documentNumber;
+  //   $scope.username = user.username;
+  //   $scope.email = user.email;
+  // };
+
+
+
+  //$scope.message= "Minha Área"
 });
 
 app.controller("novasLicitControl",function($scope){
@@ -146,17 +156,24 @@ app.controller("mapaDoSiteControl",function($scope){
     $scope.message= "Mapa do Site"
 });
 
-app.controller("entrarControl",function($scope){
-    $scope.message= "Entrar"	
+app.controller("entrarControl",function($scope, Licitation)
+{
+    //$scope.message= "Entrar",
+    $scope.submit = function()
+    {
+      Licitation.login($scope.user);
+    }
 });
 
-app.controller("registrarControl",function($scope){
-    $scope.message= "Registrar"
+app.controller("registrarControl",function($scope, Licitation)
+{
+  $scope.submit = function()
+  {
+    Licitation.register($scope.user);
+  }
+  //$scope.message= "Registrar"
 });
 
 var modalLogin = true;
 var modalRegistrar = false;
 var modalEsqueciSenha = false;
-
-
-

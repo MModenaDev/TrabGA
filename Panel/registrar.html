@@ -5,7 +5,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>         <!-- adds js bootstrap-->
 	<link rel="stylesheet" type="text/css" href="main.css">         <!-- adds css -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">            <!-- adds css bootstrap-->
-	
+
 	<script src="lib/angular/angular.min.js"></script>          <!-- adds angular.js -->
 	<script src="lib/angular/angular-route.min.js"></script>            <!-- adds router module -->
 	<script src = "portal.js"></script>
@@ -16,20 +16,20 @@
 			<div class="modal-dialog">
 				<div class="loginmodal-container">
 					<h1 class="titulo-azul horizontalLine">Registrar</h1><br>
-					<form>
+					<form ng-submit="submit()">
 						Razão Social:
-						<input type="text" name="razaoSocial" placeholder="Empresa Exemplo LTDA">
+						<input type="text" ng-model="user.documentNumber" placeholder="Empresa Exemplo LTDA">
 						Criar nome de usuário:
-						<input type="password" name="usuario" placeholder="EmpresaExemplo">
+						<input type="text" ng-model="user.username" placeholder="EmpresaExemplo">
 						E-mail:
-						<input type="text" name="email" placeholder="empresa.exemplo@email.com">
+						<input type="text" ng-model="user.email" placeholder="empresa.exemplo@email.com">
 						Confirmar e-mail:
-						<input type="password" name="emailConfirm" placeholder="empresa.exemplo@email.com">
+						<input type="text" ng-model="user.emailConfirm" placeholder="empresa.exemplo@email.com">
 						Criar uma senha:
-						<input type="text" name="senha" placeholder="********">
+						<input type="password" ng-model="user.password" placeholder="********">
 						Confirmar senha:
-						<input type="password" name="senhaConfirm" placeholder="********">
-						
+						<input type="password" ng-model="user.senhaConfirm" placeholder="********">
+
 						<span>
 							<input type="submit" name="registrar" class="login loginmodal-submit" value="Registrar">
 						</span>
@@ -39,7 +39,7 @@
 							</a>
 						</span>
 					</form>
-					
+
 				</div>
 			</div>
 		</div>
