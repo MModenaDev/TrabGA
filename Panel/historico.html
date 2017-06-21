@@ -17,3 +17,47 @@
 			</tr>
 		</table>
 </div>
+<div class="tabcontents">   
+	<div ng-show="tab == 1">
+		<div class="label-azul">Visualizadas</div>
+		<div class = "jumbotron">	
+			<table id= "tabelaLicitacao" class="table table-striped">
+				<tr>
+					<th><a href="" ng-click = OrdenarPor('Id')> Id</a></th>
+					<th >Título</th>
+					<th style="text-align: center "> Descrição</th>
+					<th><a href="" ng-click = OrdenarPor('Data')> Data de Entrega</a></th>
+					<th>Tags</th>
+				</tr>
+				<tr ng-repeat="licitacao in listaHistorico | orderBy:criterioDeOrdenacao:direcaoOrdenacao">
+					<td>{{licitacao.Id}}</td>
+					<td>{{licitacao.Titulo}}</td>
+					<td>{{licitacao.Descricao}}</td>
+					<td>{{licitacao.Data | date:'dd/MM/yyyy'}}</td>
+					<td>{{licitacao.Tags}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div ng-show="tab == 2">
+		<div class="label-azul">Não visualizadas</div>
+		<div class = "jumbotron">	
+			<table id= "tabelaLicitacao" class="table table-striped">
+				<tr>
+					<th><a href="" ng-click = OrdenarPor('Id')> Id</a></th>
+					<th >Título</th>
+					<th style="text-align: center "> Descrição</th>
+					<th><a href="" ng-click = OrdenarPor('Data')> Data de Entrega</a></th>
+					<th>Tags</th>
+				</tr>
+				<tr ng-repeat="licitacao in listaHistorico | orderBy:criterioDeOrdenacao:direcaoOrdenacao">
+					<td>{{licitacao.Id}}</td>
+					<td>{{licitacao.Titulo}}</td>
+					<td>{{licitacao.Descricao}}</td>
+					<td>{{licitacao.Data | date:'dd/MM/yyyy'}}</td>
+					<td>{{licitacao.Tags}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
