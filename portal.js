@@ -7,7 +7,7 @@ app.config(function($routeProvider){
     });
          
      $routeProvider.when('/pesquisa',{
-        templateUrl: "Panel/pesquisar.html",
+        templateUrl: "Panel/pesquisar.html",      
         controller :'pesquisarControl'
     });
 
@@ -54,13 +54,36 @@ app.config(function($routeProvider){
      $routeProvider.otherwise({redirectTo : "/index"});
 });
 
+app.controller("pesquisarControl",function($scope){
+    $scope.listOpcoes =    [
+        { op:"ID", id: 1},
+        { op:"Titulo", id: 2},
+        { op:"Descrição", id: 3},
+        { op:"Data de Entrega", id: 4},
+        { op:"Tag", id: 5}
+    ];
+
+    $scope.listaLicitacao = [
+        {Id:1001, Titulo:"Titulo1", Descricao:"Lorem1 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem1"},
+        {Id:1001, Titulo:"Titulo2", Descricao:"Lorem2 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem2"},
+        {Id:1001, Titulo:"Titulo3", Descricao:"Lorem3 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem3"},
+        {Id:1001, Titulo:"Titulo4", Descricao:"Lorem4 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem4"},
+        {Id:1001, Titulo:"Titulo5", Descricao:"Lorem5 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem5"},
+        {Id:1001, Titulo:"Titulo6", Descricao:"Lorem6 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem6"},
+        {Id:1001, Titulo:"Titulo7", Descricao:"Lorem7 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem7"},
+        {Id:1001, Titulo:"Titulo8", Descricao:"Lorem8 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem8"},
+        {Id:1001, Titulo:"Titulo9", Descricao:"Lorem9 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem9"},
+        {Id:1001, Titulo:"Titulo10", Descricao:"Lorem10 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem10"}
+    ];
+
+    $scope.pesquisar = function(palavraBusca){
+
+    }
+    
+});
 
 app.controller("minhaAreaControl",function($scope){
     $scope.message= "Minha Área"
-});
-
-app.controller("pesquisarControl",function($scope){
-    $scope.message= "Pesquisar"
 });
 
 app.controller("novasLicitControl",function($scope){

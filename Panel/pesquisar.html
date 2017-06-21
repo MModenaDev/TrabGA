@@ -1,3 +1,27 @@
-<p>
-	{{message}}
-</p>
+
+<div>
+	<select id = "selectBusca" class="form-control" ng-model="busca.tipoBusca" ng-options = "opcao.op for opcao in listOpcoes">
+			<option value = ""> Selecione</option>
+	</select>	
+
+	<input id = "campoBusca" class="form-control" type="text" ng-model="campoBusca" placeholder="Digite aqui o que está procurando" />
+	
+	<div class = "jumbotron">	
+		<table id= "tabelaLicitacao" class="table table-striped">
+			<tr>
+				<th>Id</th>
+				<th >Titulo</th>
+				<th style="text-align: center " >Descrição</th>
+				<th>Data de Entrega</th>
+				<th>Tags</th>
+			</tr>
+			<tr ng-repeat="licitacao in listaLicitacao | filter:{campoBusca}">
+				<td>{{licitacao.Id}}</td>
+				<td>{{licitacao.Titulo}}</td>
+				<td>{{licitacao.Descricao}}</td>
+				<td>{{licitacao.Data | date:'dd/MM/yyyy'}}</td>
+				<td>{{licitacao.Tags}}</td>
+			</tr>
+		</table>
+
+</div>
