@@ -136,26 +136,25 @@
 .botao-direito{
 	float: right;
 }
-<<<<<<< HEAD
 
 #selectBusca{
-    margin-left: 5%; 
-    float:left;
-	width: 190px;
-    
+  
+   float:left;
+	 width: 190px; 
 }
 
 #campoBusca{
-   margin-left: 35%; 
-   margin-right: 5%; 
-  width: 600px;
+   margin-left: 37%;   
+   width: 600px;
 }
 
 .jumbotron{
-  	margin-top: 20px;
+  	margin-top: 20px;    
 }
 
-=======
-	
->>>>>>> 4b4459c19a5ac53ddde762f6d4fbe5fcda7d2b00
+#botaoPesquisaSolicitacao{
+   width: 150px;
+   margin-left: 84%;   
+}
+
 </style>
