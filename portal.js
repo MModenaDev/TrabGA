@@ -116,6 +116,23 @@ $scope.OrdenarPor = function(campo){
 
 app.controller("minhaAreaControl",function($scope){
     $scope.message= "Minha Área"
+	
+	$scope.listaTags = [
+		{name:"TAG1"},
+		{name:"TAG2"},
+		{name:"TAG3"}
+	];
+	
+	$scope.addTag = function(){
+		$scope.listaTags.push({name:$scope.adicTag});
+		$scope.adicTag = '';
+	}
+	
+	$scope.removeTag = function(){
+		$scope.remTag = '';
+		var index = $scope.listaTags.indexOf($scope.remTag.name);
+		$scope.listaTags.splice(index, 1);
+	}
 });
 
 app.controller("novasLicitControl",function($scope){

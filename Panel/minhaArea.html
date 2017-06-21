@@ -42,16 +42,20 @@
 					<input type="text" name="tag" placeholder="Procurar Tag" style="width:75%">
 					<button type="submit" name="search" class="login loginmodal-submit" style="width:10%"><i class="fa fa-search" aria-hidden="true"></i></button>
 				</div>
-				<ul class="list-group">
-					<li class="list-group-item" ng-repeat="tag in ">{{ tag.name }}</li>  <!-- add collection of tags -->
+				<ul class="list-group" style="padding-top:10px">
+					<li class="list-group-item" ng-repeat="tag in listaTags">{{ tag.name }}</li>
 				</ul>
 			</form>
 		</div>
-		<div class="col-sm-5">
-			<h4 class="titulo-azul">Nova Tag:</h4>
-			<form>
-				<input type="text" name="tag" placeholder="Tag">
+		<div class="col-sm-5  verticalLine">
+			<h4 class="titulo-azul">Adicionar Tag:</h4>
+			<form ng-submit="addTag()">
+				<input type="text" name="tag" placeholder="Tag" ng-model="adicTag" style="width:100%">
 				<input type="submit" name="Adicionar" class="login loginmodal-submit" value="Adicionar" style="width:100%">
+			</form>
+			<h4 class="titulo-azul">Remover Tag:</h4>
+			<form ng-submit="removeTag()">
+				<input type="text" name="tag" placeholder="Tag" ng-model="remTag" style="width:100%">
 				<input type="submit" name="Adicionar" class="login loginmodal-submit" value="Remover" style="width:100%">
 			</form>
 		</div>
