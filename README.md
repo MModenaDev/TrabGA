@@ -1,4 +1,4 @@
-# TrabGA
+﻿# TrabGA
 Portal de licitacoes para a aula de Governo Aberto
 
 
@@ -15,3 +15,5 @@ comando : "npm install - g http-server" ( é necessário o npm/node instalado na
 3) Vá até o navegador e digite o endereço : "localhost:8080" 
 
 Pronto, lá estará a plicação rodando no servidor local.
+
+Fonte para tutorial: https://www.npmjs.com/package/http-server

@@ -15,25 +15,31 @@
 		<div id="login-modal" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog">
 				<div class="loginmodal-container">
-					<h1 class="titulo-azul horizontalLine">Entrar</h1><br>
+					<h1 class="titulo-azul horizontalLine">Registrar</h1><br>
 					<form>
-						<input type="text" name="user" placeholder="Nome de usuário">
-						<input type="password" name="pass" placeholder="Senha">
-						
-						<div class="login-help">
-							<a href="#">Esqueci minha senha</a>
-						</div>
-						</br>
+						Razão Social:
+						<input type="text" name="razaoSocial" placeholder="Empresa Exemplo LTDA">
+						Criar nome de usuário:
+						<input type="password" name="usuario" placeholder="EmpresaExemplo">
+						E-mail:
+						<input type="text" name="email" placeholder="empresa.exemplo@email.com">
+						Confirmar e-mail:
+						<input type="password" name="emailConfirm" placeholder="empresa.exemplo@email.com">
+						Criar uma senha:
+						<input type="text" name="senha" placeholder="********">
+						Confirmar senha:
+						<input type="password" name="senhaConfirm" placeholder="********">
 						
 						<span>
-							<input type="submit" name="entrar" class="login loginmodal-submit" value="Entrar">
+							<input type="submit" name="registrar" class="login loginmodal-submit" value="Registrar">
 						</span>
 						<span>
-							<a href="#!/registrar">
-								<input type="submit" name="registrar" class="login loginmodal-submit" value="Registrar">
+							<a href="#!/entrar">
+								<input type="submit" name="cancelar" class="login loginmodal-submit" value="Cancelar">
 							</a>
 						</span>
-					</form>					
+					</form>
+					
 				</div>
 			</div>
 		</div>
