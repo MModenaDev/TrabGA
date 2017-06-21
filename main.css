@@ -24,6 +24,11 @@
 	color: #235594;	
 }
 
+.label-azul{
+	color: #235594;
+	font-weight: bold;
+}
+
 .verticalLine {
 	padding-left: 5px;
 	border-left: 2px solid #235594;
@@ -34,41 +39,42 @@
 	border-bottom: 2px solid #235594;
 }
 
-/****** LOGIN MODAL ******/
 .loginmodal-container {
-  padding: 10px;
+  padding: 0px 30px 10px 30px;
   max-width: 350px;
   width: 100% !important;
   background-color: #e1e1e1;
   margin: 0 auto;
   border-radius: 2px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  /*overflow: hidden;*/
+  box-shadow: 1px 1px 2px 1px rgba(0.5, 0.5, 0, 0);
+  overflow: hidden;
 }
 
 .loginmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
+  color: #235594;
+  font-weight: bold;
 }
 
 .loginmodal-container input[type=submit] {
-  width: 45%;
+  width: 100%;
   display: block;
   margin-bottom: 10px;
   position: relative;
 }
 
 .loginmodal-container input[type=text], input[type=password] {
-  height: 35px;
+  height: 30px;
   font-size: 16px;
+  font-weight: normal;
   width: 100%;
   margin-bottom: 10px;
   -webkit-appearance: none;
   background: #fff;
   border: 1px solid #d9d9d9;
   border-top: 1px solid #c0c0c0;
-  /* border-radius: 2px; */
-  padding: 0 2px;
+  padding: 0 8px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
@@ -84,43 +90,31 @@
 .loginmodal {
   text-align: center;
   font-size: 14px;
-  font-family: 'Verdana', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
-  height: 36px;
-  padding: 0 8px;
-  color: #235594;
-/* border-radius: 3px; */
-/* -webkit-user-select: none;
-  user-select: none; */
+  height: 30px;
+  padding: 0 5px;
 }
 
 .loginmodal-submit {
-  /* border: 1px solid #3079ed; */
+  font-weight: bold;
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1); 
-  background-color: #154080;
-  padding: 17px 0px;
+  background-color: #235594;
+  padding: 5px 5px;
   font-size: 14px;
-  font-weight: bold;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
 .loginmodal-submit:hover {
-  /* border: 1px solid #2f5bb7; */
   border: 0px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
   color: #000;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
 .loginmodal-container a {
   text-decoration: none;
-  color: #235594;
-  font-weight: 400;
   text-align: center;
-  display: inline-block;
-  opacity: 0.8;
   transition: opacity ease 0.5s;
 } 
 
@@ -128,12 +122,24 @@
   font-size: 12px;
 }
 
-.botao-esquerdo{
-	float: left;
+#selectBusca{
+  
+   float:left;
+	 width: 190px; 
 }
 
-.botao-direito{
-	float: right;
+#campoBusca{
+   margin-left: 37%;   
+   width: 600px;
 }
-	
+
+.jumbotron{
+  	margin-top: 20px;    
+}
+
+#botaoPesquisaSolicitacao{
+   width: 150px;
+   margin-left: 84%;   
+}
+
 </style>
