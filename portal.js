@@ -50,6 +50,11 @@ app.config(function($routeProvider){
         templateUrl: "Panel/entrar.html",
         controller :'entrarControl'
     });
+	
+	$routeProvider.when('/registrar',{
+        templateUrl: "Panel/registrar.html",
+        controller :'registrarControl'
+    });
 
      $routeProvider.otherwise({redirectTo : "/index"});
 });
@@ -92,7 +97,16 @@ app.controller("mapaDoSiteControl",function($scope){
 });
 
 app.controller("entrarControl",function($scope){
-    $scope.message= "Entrar"
+    $scope.message= "Entrar"	
 });
+
+app.controller("registrarControl",function($scope){
+    $scope.message= "Registrar"
+});
+
+var modalLogin = true;
+var modalRegistrar = false;
+var modalEsqueciSenha = false;
+
 
 
