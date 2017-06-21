@@ -64,31 +64,18 @@ app.config(function($routeProvider){
      $routeProvider.otherwise({redirectTo : "/index"});
 });
 
-app.controller("pesquisarControl",function($scope){
+app.controller("pesquisarControl",function($scope, Licitation)
+{
+  Licitation.getLicitations($scope);
+
     $scope.listOpcoes =    [
         { op2:"Id",op:"Id", id: 1},
         { op2:"Titulo",op:"Titulo", id: 2},
         { op2:"Descricao",op:"Descrição", id: 3},
-        { op2:"Data",op:"Data de Entrega", id: 4},
-        { op2:"Tags",op:"Tags", id: 5}
+        { op2:"Data",op:"Data de Entrega", id: 4}
     ];
 
-    var listaLicitacaoTemp = [
-        {Id:1001, Titulo:"Titulo1", Descricao:"Lorem1 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem1"},
-        {Id:1002, Titulo:"Titulo2", Descricao:"Lorem2 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem2"},
-        {Id:1003, Titulo:"Titulo3", Descricao:"Lorem3 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem3"},
-        {Id:1004, Titulo:"Titulo4", Descricao:"Lorem4 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem4"},
-        {Id:1005, Titulo:"Titulo5", Descricao:"Lorem5 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem5"},
-        {Id:1006, Titulo:"Titulo6", Descricao:"Lorem6 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem6"},
-        {Id:1007, Titulo:"Titulo7", Descricao:"Lorem7 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem7"},
-        {Id:1008, Titulo:"Titulo8", Descricao:"Lorem8 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem8"},
-        {Id:1009, Titulo:"Titulo9", Descricao:"Lorem9 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem9"},
-        {Id:1010, Titulo:"Titulo10", Descricao:"Lorem10 Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor [...]", Data: new Date(), Tags:"Lorem10"}
-    ];
-
-$scope.listaLicitacao = listaLicitacaoTemp;
-
-$scope.pesquisarLicitacao = function(campoBusca,tipoBusca){
+  $scope.pesquisarLicitacao = function(campoBusca,tipoBusca){
       switch(tipoBusca) {
         case "Id":
              $scope.listaLicitacao = listaLicitacaoTemp.filter(function(obj) { return obj.Id == campoBusca; });
@@ -103,64 +90,54 @@ $scope.pesquisarLicitacao = function(campoBusca,tipoBusca){
         case "Data":
              $scope.listaLicitacao = listaLicitacaoTemp.filter(function(obj) { return obj.Data == campoBusca; });
             break;
-        case "Tags":
-             $scope.listaLicitacao = listaLicitacaoTemp.filter(function(obj) { return obj.Tags == campoBusca; });
-            break;
-
         default:
            $scope.listaLicitacao = listaLicitacaoTemp;
         }
 	}
 
-$scope.OrdenarPor = function(campo){
-    $scope.criterioDeOrdenacao = campo;
-    $scope.direcaoOrdenacao =! $scope.direcaoOrdenacao;
-}
+  $scope.OrdenarPor = function(campo){
+      $scope.criterioDeOrdenacao = campo;
+      $scope.direcaoOrdenacao =! $scope.direcaoOrdenacao;
+  }
 
 });
 
-//<<<<<<< HEAD
 app.controller("minhaAreaControl",function($scope, Licitation)
 {
   Licitation.findUser($scope);
-  // {
-  //   $scope.documentNumber = user.documentNumber;
-  //   $scope.username = user.username;
-  //   $scope.email = user.email;
-  // };
 
-
-
-  //$scope.message= "Minha Área"
-// =======
-// app.controller("minhaAreaControl",function($scope){
-//     $scope.message= "Minha Área"
-//
-// 	$scope.listaTags = [
-// 		{name:"TAG1"},
-// 		{name:"TAG2"},
-// 		{name:"TAG3"}
-// 	];
-//
-// 	$scope.addTag = function(){
-// 		$scope.listaTags.push({name:$scope.adicTag});
-// 		$scope.adicTag = '';
-// 	}
-//
-// 	$scope.removeTag = function(){
-// 		$scope.remTag = '';
-// 		var index = $scope.listaTags.indexOf($scope.remTag.name);
-// 		$scope.listaTags.splice(index, 1);
-// 	}
-// >>>>>>> 4a82e16f5abfd4f334881540d656b0ce2f7129e5
+	$scope.addTag = function()
+  {
+    Licitation.addTag($scope.adicTag, $scope);
+		//$scope.tags.push({tag:$scope.adicTag});
+		$scope.adicTag = '';
+	}
+	$scope.removeTag = function()
+  {
+		$scope.remTag = '';
+		var index = $scope.tags.indexOf($scope.remTag);
+		$scope.tags.splice(index, 1);
+	}
 });
 
-app.controller("novasLicitControl",function($scope){
-    $scope.message= "Novas Licitações"
+app.controller("novasLicitControl",function($scope, Licitation)
+{
+  Licitation.getUserLicitations($scope);
+
+  $scope.OrdenarPor = function(campo){
+      $scope.criterioDeOrdenacao = campo;
+      $scope.direcaoOrdenacao =! $scope.direcaoOrdenacao;
+  }
 });
 
-app.controller("historicoControl",function($scope){
-    $scope.message= "Histórico"
+app.controller("historicoControl",function($scope, Licitation)
+{
+  Licitation.getUserLicitations($scope);
+
+  $scope.OrdenarPor = function(campo){
+      $scope.criterioDeOrdenacao = campo;
+      $scope.direcaoOrdenacao =! $scope.direcaoOrdenacao;
+  }
 });
 
 app.controller("verPainelControl",function($scope){
