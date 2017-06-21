@@ -60,6 +60,11 @@ app.config(function($routeProvider){
         templateUrl: "Panel/trocarSenha.html",
         controller :'trocarSenhaControl'
     });
+	
+	$routeProvider.when('/esqueciSenha',{
+        templateUrl: "Panel/esqueciSenha.html",
+        controller :'esqueciSenhaControl'
+    });
 
      $routeProvider.otherwise({redirectTo : "/index"});
 });
@@ -180,6 +185,6 @@ app.controller("trocarSenhaControl",function($scope){
     $scope.message= "Trocar Senha"
 });
 
-var modalLogin = true;
-var modalRegistrar = false;
-var modalEsqueciSenha = false;
+app.controller("esqueciSenhaControl",function($scope){
+    $scope.message= "Esqueci a Senha"
+});
